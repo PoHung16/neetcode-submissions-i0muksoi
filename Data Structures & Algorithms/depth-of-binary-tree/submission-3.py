@@ -1,0 +1,17 @@
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        #Step1:  Edge case :如果 root 是空，回傳 0 或 None。
+        if not root:
+            return 0
+        #Step2:  慣老闆不想動沒有base case:
+        left = self.maxDepth(root.left)
+        right = self.maxDepth(root.right)
+        #Step 3: 向手下要結果，回報給真正大老闆
+        return 1+max(left,right)
+
+
+
+
+
+
+
